@@ -1,6 +1,6 @@
 # Welcome to Digitraffic
 
-Digitraffic provides specialized software solutions for [describe your core industry or mission]. This GitHub organization hosts our Maven packages, which are available exclusively to established customers.
+Digitraffic provides specialized software solutions for connected and automated mobility. This GitHub organization hosts our Maven packages, which are available exclusively to established customers.
 
 ## How to Get Access
 
