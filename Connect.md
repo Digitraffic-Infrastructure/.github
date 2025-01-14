@@ -1,13 +1,11 @@
 # Connect
 
-A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard.
+Tools and utilities for establishing connections using BI and SI interfaces.
 
 ## Features
 
-- **Simple message creation**: Create `CAM`, `DENM`, `SREM`, `SSEM`, `MAPEM`, and `SPATEM` through a simple standardized java interface.
-- **Encoding & Decoding**: Encode and decode messages to and from their UPER encoded binary representation.
-- **Optional GeoNetworking- and security-headers**: Add Geonetworking header and security header to your messages for message signing.
-- **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
+- **BI-Client**: A client implementation for sending and receiving messages through Basic Interface.
+- **SI-Client**: A client implementation for sending and receiving messages through Subject Interface.
 
 ## Installation
 
@@ -15,15 +13,15 @@ A library for generating, encoding, and decoding V2X messages compliant with the
 Add the following dependency to your `pom.xml`:
 ```xml
 <dependency>
-    <groupId>digitraffic.link.etsi</groupId>
-    <artifactId>etsilibrary</artifactId>
-    <version>2.4</version>
+    <groupId>digitraffic.connect</groupId>
+    <artifactId>connect</artifactId>
+    <version>2.6</version>
 </dependency>
 ```
 ### Using Gradle
 Add the following to your `build.gradle`:
 ```xml
-implementation 'digitraffic.link.etsi:etsilibrary:2.4'
+implementation 'digitraffic.connect:connect:2.6'
 ```
 
 ## Getting Started
@@ -31,75 +29,82 @@ implementation 'digitraffic.link.etsi:etsilibrary:2.4'
 ### Basic Example
 Here’s a quick example to get you started:
 ```java
-/************ Library initialization **************/
+/************* Connect initialization *************/
 
-// Providing license
-String license = "[YOUR_DIGITRAFFIC_SOFTWARE_LICENCE]";
-LibInitializer.initialize(license);
-
-// or providing license and logger
+String license = "";
 ConsoleLogger logger = new ConsoleLogger(Level.FINER);
-LibInitializer.initialize(license, logger);
-
-// or providing license, logger and security module
-SoftwareSecurityModule ssm = new SoftwareSecurityModule("[YOUR_SECURE_STORE_PASSWORD]", "[SECURE_STORE_PATH]", logger);
-ETSISecurity_L0 sec = new ETSISecurity_L0("[SIGNING_CERTIFICATE_ID]", ssm, false, logger);
+ConnectInitializer.initialize(license, logger);
 
 /**************************************************/
-/*********** Creating simple payloads *************/
-
-SREM srm = new SREM();
-srm.getHeader().setStationId(12345);
-srm.getSrm().setSecond(5678);
-srm.getSrm().getRequestor().getId().setStationId(12345);
-//...
-
-System.out.println(srm.toString());
-
-/**************************************************/
-/************** Encoding / Decoding ***************/
-
-byte[] encoding = srm.Encode();
-
-System.out.println(ArrayOperations.toHex(encoding));
-
-SREM decodedSrem = new SREM(encoding);
-
-System.out.println(decodedSrem.toString());
-
-/**************************************************/
-/********* Creating complete ETSI message *********/
-
-IETSIMessage basicMessage = ETSIFactory.createMessage(CompileFlags.Basic, srm);
+/****************** BiClient init *****************/
             
-System.out.println(basicMessage.toString());
-
-IETSIMessage extendedBasicmessage = ETSIFactory.createMessage(CompileFlags.ExtendedBasic, srm);
-System.out.println(extendedBasicmessage.toString());
+BiClient client = new BiClient("[BORKER_URI]", "[CLIENT_COMMON_NAME]", "[KEYSTORE_PATH]", "[KEYSTORE_PASSWORD]", "[TRUSTSTORE_PATH]", "[TRUSTSTORE_PASSWORD]");
 
 /**************************************************/
-/************** Encoding / Decoding ***************/
+/****************** BiClient send *****************/
 
-byte[] basicMessageEncoding = basicMessage.encode();
+//Providing Bi message
+Message biMessage = new Message(ap, [MESSAGE]);
+client.Send(biMessage);
 
-IETSIMessage decodedBasicMessage = ETSIFactory.decodeByteArray(basicMessageEncoding);
-System.out.println(decodedBasicMessage.toString());
+//Providing binary message and message type
+client.Send([MESSAGE], MessageType.SREM);
 
-byte[] extendedBasicMessageEncoding = extendedBasicmessage.encode();
-
-IETSIMessage decodedExtendedBasicMessage = ETSIFactory.decodeByteArray(extendedBasicMessageEncoding);
-System.out.println(decodedExtendedBasicMessage.toString()); 
+//Providing only binary
+client.Send([MESSAGE]);
 
 /**************************************************/
-/**************** Secure messages *****************/
+/***************** BiClient receive ***************/
 
-IETSIMessage secureMessage = ETSIFactory.createMessage(CompileFlags.Signed, srm);
-System.out.println(secureMessage.toString());
+Selector selector = new Selector().MessageType(Operator.EQUAL_TO, MessageType.DENM);
+client.Subscribe(selector);
+client.setMessageReceivedHandler(payload -> {
+    try {
+        IETSIMessage message = ETSIFactory.decodeByteArray(payload.getPayload());
+    } catch (Exception e) {
+        e.printStackTrace(); 
+    }
+});
 
-byte[] secureMessageEncoding = secureMessage.encode();
+/**************************************************/
+/****************** SiClient init *****************/
 
-IETSIMessage decodedSecureMessage = ETSIFactory.decodeByteArray(secureMessageEncoding);
-System.out.println(decodedSecureMessage.toString());
+SiClient brokerclient = new SiClient("[BORKER_URI]", "[SECURITY_TOKEN]", "[DOMAIN]", List.of("[Associated TLCidentifier 1]", "[Associated TLCidentifier 2], ..."), SecurityMode.NONE, SessionProtocol.TCPStreaming_Multiplex, SessionType.Broker);
+SiClient tlcClient = new SiClient("[BORKER_URI]", "[SECURITY_TOKEN]", "[DOMAIN]", "[TLCidentifier]", SecurityMode.NONE, SessionProtocol.TCPStreaming_Singleplex, SessionType.TLC); 
+            
+/**************************************************/
+/************* SiClient send & receive ************/
+
+tlcClient.setMessageReceivedHandler(payload -> {
+    try {
+        IETSIMessage message = ETSIFactory.decodeByteArray(payload.getPayload());
+    } catch (Exception e) {
+        e.printStackTrace(); 
+    }
+});
+
+brokerclient.setMessageReceivedHandler(payload -> {
+    try {
+        IETSIMessage message = ETSIFactory.decodeByteArray(payload.getPayload());
+    } catch (Exception e) {
+        e.printStackTrace(); 
+    }
+});
+
+brokerclient.Send([MESSAGE], PayloadType.SRM, "evamtlc1");
+tlcClient.Send([MESSAGE], PayloadType.SRM);
+
+/**************************************************/
+/**** Add associated Tlcs (For broker session) ****/
+
+brokerclient.AddAssociatedTcl("<tlcIdentifier>");
+
+// or
+
+List<String> identifiers = new ArrayList<>();
+identifiers.add("[Associated TLCidentifier 3]");
+identifiers.add("[Associated TLCidentifier 4]")
+brokerclient.AddAssociatedTlcs(identifiers);
 
 /**************************************************/
 ```
