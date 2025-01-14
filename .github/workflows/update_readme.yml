@@ -1,0 +1,67 @@
+name: Update README with Latest GitHub Package Version
+
+on:
+  release:
+    types:
+      - published  # Trigger when a new release is published
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up GitHub CLI for interacting with GitHub API
+      - name: Set up GitHub CLI
+        uses: cli/cli-action@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 3: Fetch the latest versions from GitHub Packages
+      - name: Get latest package versions from GitHub Packages
+        id: fetch-version
+        run: |
+          # Define the repository and package names
+          REPO="Digitraffic-Infrastructure/Digitraffic.CentralRepository"
+          PACKAGE_ETSILIB="digitraffic.link.etsi:etsilibrary"
+          PACKAGE_CONNECT="digitraffic.connect:connect"
+
+          # Fetch the latest version for the ETSILibrary package
+          ETSILIB_VERSION=$(curl -s \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/digitraffic.link.etsi%3Aetsilibrary/versions" | jq -r '.[0].metadata.container.tags[0]')
+
+          # Fetch the latest version for the Connect package
+          CONNECT_VERSION=$(curl -s \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/digitraffic.connect%3Aconnect/versions" | jq -r '.[0].metadata.container.tags[0]')
+
+          # Output the versions and set them as environment variables
+          echo "Latest version for ETSILibrary: $ETSILIB_VERSION"
+          echo "Latest version for Connect: $CONNECT_VERSION"
+          echo "LATEST_VERSION_ETSILIB=$ETSILIB_VERSION" >> $GITHUB_ENV
+          echo "LATEST_VERSION_CONNECT=$CONNECT_VERSION" >> $GITHUB_ENV
+
+      # Step 4: Update the profile/README.md file with the latest versions
+      - name: Update profile/README.md with latest package versions
+        run: |
+          # Replace placeholders in profile/README.md with actual version values
+          sed -i "s/{{LATEST_VERSION_ETSILIB}}/$LATEST_VERSION_ETSILIB/g" profile/README.md
+          sed -i "s/{{LATEST_VERSION_CONNECT}}/$LATEST_VERSION_CONNECT/g" profile/README.md
+          
+          # Commit and push changes
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          git commit -m "Update profile/README.md with latest package versions: $LATEST_VERSION_ETSILIB, $LATEST_VERSION_CONNECT" || echo "No changes to commit"
+
+      # Step 5: Push changes back to repository
+      - name: Push changes back to repository
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
