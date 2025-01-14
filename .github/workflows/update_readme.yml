@@ -4,6 +4,7 @@ on:
   release:
     types:
       - published  # Trigger when a new release is published
+  workflow_dispatch:  # Enable manual trigger from the GitHub UI
 
 jobs:
   update-readme:
