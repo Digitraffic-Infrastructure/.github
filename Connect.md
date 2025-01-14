@@ -1,6 +1,9 @@
-# Connect
-
-Tools and utilities for establishing connections using BI and SI interfaces.
+<div align="center">
+    <h1>Connect</h1>
+    <p>Tools and utilities for establishing connections using BI and SI interfaces.</p>
+</br>
+</br>
+</div>
 
 ## Features
 
