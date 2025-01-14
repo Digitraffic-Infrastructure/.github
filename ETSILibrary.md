@@ -1,6 +1,8 @@
 <div align="center">
     <h1>ETSI Library</h1>
     <p>A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard.</p>
+</br>
+</br>
 </div>
 
 ## Features
