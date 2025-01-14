@@ -10,10 +10,6 @@ This repository provides Maven packages from the **Digitraffic** software ecosys
 |--------------------------------------------|---------------------------------------------------------------------------------|
 | **[digitraffic.link.etsi:etsilibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard.                               |
 | **[digitraffic.connect:connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |
-| **[digitraffic.security:security](../Security.md)**          | Core security library for handling C-ITS specific security related operations compliant with ETSI 103 097.     |
-| **[digitraffic.security.ssm:ssm](../SoftwareSecurityModule.md)**           | Security module implementation for handling cryptographic operations and secure storage functionality.                              |
-| **[digitraffic.asn1:asn1](../ASN1.md)**                  | Utilities for encoding and decoding ASN.1 data structures.                     |
-| **[digitraffic.utils:utils](../Utils.md)**                | General-purpose utilities and helper functions for common tasks.   |
 
 ---
 
@@ -56,34 +52,6 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
-    <version>LATEST</version>
-</dependency>
-```
-```xml
-<dependency>
-    <groupId>digitraffic.security</groupId>
-    <artifactId>security</artifactId>
-    <version>LATEST</version>
-</dependency>
-```
-```xml
-<dependency>
-    <groupId>digitraffic.security.ssm</groupId>
-    <artifactId>ssm</artifactId>
-    <version>LATEST</version>
-</dependency>
-```
-```xml
-<dependency>
-    <groupId>digitraffic.asn1</groupId>
-    <artifactId>asn1</artifactId>
-    <version>LATEST</version>
-</dependency>
-```
-```xml
-<dependency>
-    <groupId>digitraffic.utils</groupId>
-    <artifactId>utils</artifactId>
     <version>LATEST</version>
 </dependency>
 ```
