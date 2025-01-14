@@ -1,4 +1,4 @@
-# ![Digitraffic](../assets/DT_logotype_white.png)
+# Welcome to Digitraffic
 
 Digitraffic provides specialized software solutions for connected and automated mobility. This GitHub organization hosts our Maven packages, which are exclusively available to established customers.
 
