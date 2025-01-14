@@ -1,6 +1,9 @@
-# Digitraffic Central Repository
+![Digitraffic](../assets/DT_logotype_white.png)
 
-This repository provides Maven packages from the **Digitraffic** software ecosystem. These packages are intended exclusively for established customers.
+<div align="center">
+    <h1>Digitraffic Central Repository</h1>
+    <p>This repository provides Maven packages from the <b>Digitraffic</b> software ecosystem.</p>
+</div>
 
 ---
 
