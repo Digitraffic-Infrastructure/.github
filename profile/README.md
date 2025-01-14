@@ -8,12 +8,12 @@ This repository provides Maven packages from the **Digitraffic** software ecosys
 
 | **Package Name**                           | **Description**                                                                 |
 |--------------------------------------------|---------------------------------------------------------------------------------|
-| **[digitraffic.link.etsi.etsilibrary](../ETSILibrary.md)**      | A library for ETSI-based linking functionality.                                |
-| **digitraffic.connect.connect**            | Tools and utilities for connecting Digitraffic services and systems.           |
-| **digitraffic.security.security**          | Core security libraries for handling authentication, encryption, and more.     |
-| **digitraffic.security.ssm.ssm**           | Security management tools for SSM-specific tasks.                              |
-| **digitraffic.asn1.asn1**                  | Utilities for encoding and decoding ASN.1 data structures.                     |
-| **digitraffic.utils.utils**                | General-purpose utilities and helper functions for common programming tasks.   |
+| **[digitraffic.link.etsi:etsilibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard.                               |
+| **[digitraffic.connect:connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |
+| **[digitraffic.security:security](../Security.md)**          | Core security library for handling C-ITS specific security related operations compliant with ETSI 103 097.     |
+| **[digitraffic.security.ssm:ssm](../SoftwareSecurityModule.md)**           | Security module implementation for handling cryptographic operations and secure storage functionality.                              |
+| **[digitraffic.asn1:asn1](../ASN1.md)**                  | Utilities for encoding and decoding ASN.1 data structures.                     |
+| **[digitraffic.utils:utils](../Utils.md)**                | General-purpose utilities and helper functions for common tasks.   |
 
 ---
 
@@ -22,12 +22,12 @@ This repository provides Maven packages from the **Digitraffic** software ecosys
 To integrate the Maven packages into your projects:
 
 ### 1. Configure Your Maven Settings
-Add your GitHub Personal Access Token (PAT) to your Maven `settings.xml`:
+Add your GitHub Personal Access Token (PAT) to your Maven `settings.xml` (Provided by your Digitraffic representative):
 ```xml
 <servers>
     <server>
         <id>digitraffic-packages</id>
-        <username>YOUR_GITHUB_USERNAME</username>
+        <username>Digitraffic-User</username>
         <password>YOUR_PERSONAL_ACCESS_TOKEN</password>
     </server>
 </servers>
@@ -38,23 +38,58 @@ Include the Digitraffic Maven repository in your `pom.xml`:
 <repositories>
     <repository>
         <id>digitraffic-packages</id>
-        <name>Digitraffic Maven Packages</name>
-        <url>https://maven.pkg.github.com/Digitraffic-Infrastructure/Digitraffic.Packages</url>
+        <name>GitHub Digitraffic-Infrastructure Apache Maven Packages</name>
+        <url>https://maven.pkg.github.com/Digitraffic-Infrastructure/Digitraffic.CentralRepository</url>
     </repository>
 </repositories>
 ```
 ### 3. Add Dependencies
-Add the required packages to your dependencies section. For example:
+Add the required packages to your dependencies section of your `pom.xml`.
 ```xml
 <dependency>
-    <groupId>digitraffic.link</groupId>
-    <artifactId>etsi.etsilibrary</artifactId>
-    <version>1.0.0</version>
+    <groupId>digitraffic.link.etsi</groupId>
+    <artifactId>etsilibrary</artifactId>
+    <version>LATEST/version>
+</dependency>
+```
+```xml
+<dependency>
+    <groupId>digitraffic.connect</groupId>
+    <artifactId>connect</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+```xml
+<dependency>
+    <groupId>digitraffic.security</groupId>
+    <artifactId>security</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+```xml
+<dependency>
+    <groupId>digitraffic.security.ssm</groupId>
+    <artifactId>ssm</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+```xml
+<dependency>
+    <groupId>digitraffic.asn1</groupId>
+    <artifactId>asn1</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+```xml
+<dependency>
+    <groupId>digitraffic.utils</groupId>
+    <artifactId>utils</artifactId>
+    <version>LATEST</version>
 </dependency>
 ```
 
 ## 💡 Support
-If you encounter any issues or have questions regarding these packages, please contact your Digitraffic representative or open an issue in this repository (accessible only to organization members).
+If you encounter any issues or have questions regarding these packages, please contact your Digitraffic representative.
 
 ## ❗ Important Notes
-- **Access Restrictions**: These packages are only accessible to members of the Digitraffic GitHub organization.
+- **Access Restrictions**: These packages are only accessible to users with a valid access token provided by Digitraffic.
