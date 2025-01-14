@@ -6,7 +6,8 @@ A library for generating, encoding, and decoding V2X messages compliant with the
 
 - **Simple message creation**: Create `CAM`, `DENM`, `SREM`, `SSEM`, `MAPEM`, and `SPATEM` through a simple standardized java interface.
 - **Encoding & Decoding**: Encode and decode messages to and from their UPER encoded binary representation.
-- **Optional GeoNetworking- and security-headers**: Add Geonetworking header and security header to your messages for message signing.
+- **Optional GeoNetworking- and security-headers**: Add Geonetworking header and security header to your messages for message signing compliant with ETSI 103 097.
+- **Security**: L0-compliant security implementation and software security module for secure message handling.
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
 ## Installation
