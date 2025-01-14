@@ -8,7 +8,7 @@ This repository provides Maven packages from the **Digitraffic** software ecosys
 
 | **Package Name**                           | **Description**                                                                 |
 |--------------------------------------------|---------------------------------------------------------------------------------|
-| **[digitraffic.link.etsi.etsilibrary](https://github.com/Digitraffic-Infrastructure/Digitraffic.CentralRepository/packages/2370073)**      | A library for ETSI-based linking functionality.                                |
+| **[digitraffic.link.etsi.etsilibrary](../ETSILibrary.md)**      | A library for ETSI-based linking functionality.                                |
 | **digitraffic.connect.connect**            | Tools and utilities for connecting Digitraffic services and systems.           |
 | **digitraffic.security.security**          | Core security libraries for handling authentication, encryption, and more.     |
 | **digitraffic.security.ssm.ssm**           | Security management tools for SSM-specific tasks.                              |
