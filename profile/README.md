@@ -3,9 +3,9 @@
 <div align="center">
     <h1>Digitraffic Central Repository</h1>
     <p>This repository provides Maven packages from the <b>Digitraffic</b> software ecosystem.</p>
+</br>
+</br>
 </div>
-
----
 
 ## 📦 Available Packages
 
