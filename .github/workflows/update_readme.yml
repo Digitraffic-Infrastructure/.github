@@ -54,6 +54,7 @@ jobs:
         fi
 
     - name: Validate Token Permissions
+      if: ${{ always() }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
