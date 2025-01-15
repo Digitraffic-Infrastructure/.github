@@ -17,20 +17,14 @@ jobs:
         with:
           repository: 'Digitraffic-Infrastructure/.github'  # Checkout the public repository
 
-      # Step 2: Set up GitHub CLI for interacting with GitHub API
-      - name: Set up GitHub CLI
-        uses: cli/cli-action@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      # Step 3: Set up authentication for private repository
+      # Step 2: Set up authentication for private repository
       - name: Set up authentication for private repository
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
           git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf "https://github.com"
           git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf "https://github.com"
         
-      # Step 4: Fetch the latest versions from GitHub Packages (private repository)
+      # Step 3: Fetch the latest versions from GitHub Packages (private repository)
       - name: Get latest package versions from GitHub Packages
         id: fetch-version
         run: |
@@ -38,13 +32,13 @@ jobs:
           PACKAGE_ETSILIB="digitraffic.link.etsi:etsilibrary"
           PACKAGE_CONNECT="digitraffic.connect:connect"
 
-          # Fetch the latest version for the ETSILibrary package
+          # Fetch the latest version for the ETSILibrary package using curl
           ETSILIB_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/digitraffic.link.etsi%3Aetsilibrary/versions" | jq -r '.[0].metadata.container.tags[0]')
 
-          # Fetch the latest version for the Connect package
+          # Fetch the latest version for the Connect package using curl
           CONNECT_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
@@ -56,7 +50,7 @@ jobs:
           echo "LATEST_VERSION_ETSILIB=$ETSILIB_VERSION" >> $GITHUB_ENV
           echo "LATEST_VERSION_CONNECT=$CONNECT_VERSION" >> $GITHUB_ENV
 
-      # Step 5: Update the profile/README.md file in the public repository with the latest versions
+      # Step 4: Update the profile/README.md file in the public repository with the latest versions
       - name: Update profile/README.md with latest package versions
         run: |
           # Replace placeholders in profile/README.md with actual version values
@@ -69,7 +63,7 @@ jobs:
           git add profile/README.md
           git commit -m "Update profile/README.md with latest package versions: $LATEST_VERSION_ETSILIB, $LATEST_VERSION_CONNECT" || echo "No changes to commit"
 
-      # Step 6: Push changes back to the public repository
+      # Step 5: Push changes back to the public repository
       - name: Push changes back to public repository
         uses: ad-m/github-push-action@v0.6.0
         with:
