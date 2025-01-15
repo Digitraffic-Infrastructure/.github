@@ -1,70 +1,65 @@
 name: Update README with Latest GitHub Package Version
 
 on:
-  release:
-    types:
-      - published  # Trigger when a new release is published
-  workflow_dispatch:  # Allow manual triggering
+  workflow_dispatch:  # Manual trigger
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the public repository (where README is located)
       - name: Checkout public repository
         uses: actions/checkout@v3
         with:
-          repository: 'Digitraffic-Infrastructure/.github'  # Checkout the public repository
+          repository: 'Digitraffic-Infrastructure/.github'
 
-      # Step 2: Set up authentication for private repository
       - name: Set up authentication for private repository
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
           git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf "https://github.com"
-          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf "https://github.com"
-        
-      # Step 3: Fetch the latest versions from GitHub Packages (private repository)
-      - name: Get latest package versions from GitHub Packages
+
+      - name: Fetch latest package versions
         id: fetch-version
         run: |
-          # Define the private repository and package names
           PACKAGE_ETSILIB="digitraffic.link.etsi:etsilibrary"
           PACKAGE_CONNECT="digitraffic.connect:connect"
 
-          # Fetch the latest version for the ETSILibrary package using curl
           ETSILIB_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/digitraffic.link.etsi%3Aetsilibrary/versions" | jq -r '.[0].metadata.container.tags[0]')
 
-          # Fetch the latest version for the Connect package using curl
           CONNECT_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/digitraffic.connect%3Aconnect/versions" | jq -r '.[0].metadata.container.tags[0]')
 
-          # Output the versions and set them as environment variables
-          echo "Latest version for ETSILibrary: $ETSILIB_VERSION"
-          echo "Latest version for Connect: $CONNECT_VERSION"
-          echo "LATEST_VERSION_ETSILIB=$ETSILIB_VERSION" >> $GITHUB_ENV
-          echo "LATEST_VERSION_CONNECT=$CONNECT_VERSION" >> $GITHUB_ENV
+          echo "ETSILIB_VERSION=$ETSILIB_VERSION" >> $GITHUB_ENV
+          echo "CONNECT_VERSION=$CONNECT_VERSION" >> $GITHUB_ENV
 
-      # Step 4: Update the profile/README.md file in the public repository with the latest versions
-      - name: Update profile/README.md with latest package versions
+          if [ -z "$ETSILIB_VERSION" ] || [ -z "$CONNECT_VERSION" ]; then
+            echo "Error: Failed to fetch latest versions."
+            exit 1
+          fi
+
+      - name: Debugging Output
         run: |
-          # Replace placeholders in profile/README.md with actual version values
+          echo "Fetched ETSILIB_VERSION: $LATEST_VERSION_ETSILIB"
+          echo "Fetched CONNECT_VERSION: $LATEST_VERSION_CONNECT"
+          echo "Contents of README before update:"
+          cat profile/README.md
+
+      - name: Update README
+        run: |
           sed -i "s/{{LATEST_VERSION_ETSILIB}}/$LATEST_VERSION_ETSILIB/g" profile/README.md
           sed -i "s/{{LATEST_VERSION_CONNECT}}/$LATEST_VERSION_CONNECT/g" profile/README.md
           
-          # Commit and push changes
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add profile/README.md
-          git commit -m "Update profile/README.md with latest package versions: $LATEST_VERSION_ETSILIB, $LATEST_VERSION_CONNECT" || echo "No changes to commit"
+          git commit -m "Update README with latest versions: $LATEST_VERSION_ETSILIB, $LATEST_VERSION_CONNECT" || echo "No changes to commit"
 
-      # Step 5: Push changes back to the public repository
-      - name: Push changes back to public repository
+      - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
