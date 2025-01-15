@@ -1,66 +1,54 @@
-name: Update README with Latest Package Versions
+name: Debug and Update README
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
-  update-readme:
+  debug-and-update:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v3
-
-    - name: Debug package visibility
+    - name: Debug Organization Packages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PACKAGE_ETSILIB: digitraffic.link.etsi:etsilibrary
-        PACKAGE_CONNECT: digitraffic.connect:connect
       run: |
-        echo "Debugging ETSILIB package in the organization scope..."
+        echo "Fetching organization packages..."
         curl -s \
           -H "Authorization: Bearer $GITHUB_TOKEN" \
           -H "Accept: application/vnd.github+json" \
-          "https://api.github.com/orgs/Digitraffic-Infrastructure/packages" > org_packages.json
-        echo "Response saved to org_packages.json"
+          "https://api.github.com/orgs/Digitraffic-Infrastructure/packages?package_type=maven" > org_packages.json
+        echo "Saved to org_packages.json"
         cat org_packages.json
 
-        echo "Debugging ETSILIB package in the repository scope..."
+    - name: Debug Repository Packages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "Fetching repository packages..."
         curl -s \
           -H "Authorization: Bearer $GITHUB_TOKEN" \
           -H "Accept: application/vnd.github+json" \
-          "https://api.github.com/repos/Digitraffic-Infrastructure/Digitraffic.CentralRepository/packages" > repo_packages.json
-        echo "Response saved to repo_packages.json"
+          "https://api.github.com/repos/Digitraffic-Infrastructure/Digitraffic.CentralRepository/packages?package_type=maven" > repo_packages.json
+        echo "Saved to repo_packages.json"
         cat repo_packages.json
 
-    - name: Attempt fetching ETSILIB version
+    - name: Fetch Package Versions
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PACKAGE_ETSILIB: digitraffic.link.etsi:etsilibrary
       run: |
-        echo "Fetching latest version of ETSILIB..."
+        echo "Fetching versions for $PACKAGE_ETSILIB..."
         curl -s \
           -H "Authorization: Bearer $GITHUB_TOKEN" \
           -H "Accept: application/vnd.github+json" \
           "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/maven/${PACKAGE_ETSILIB}/versions" > etsilib_versions.json
-        echo "ETSILIB API Response:"
+        echo "Response saved to etsilib_versions.json"
         cat etsilib_versions.json
 
-        echo "Attempting to extract version..."
+        echo "Extracting version..."
         VERSION=$(jq -r '.[0].metadata.container.tags[0] // "unknown"' etsilib_versions.json)
         echo "Fetched version: $VERSION"
         if [ "$VERSION" == "unknown" ]; then
           echo "Error: Could not fetch the version. Check the response."
           exit 1
         fi
-
-    - name: Update README
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PACKAGE_ETSILIB_VERSION: ${{ steps.attempt-fetch.outputs.VERSION }}
-      run: |
-        # Perform README updates here using the fetched version
-        echo "Updating README with the latest version: $PACKAGE_ETSILIB_VERSION"
