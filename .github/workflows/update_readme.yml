@@ -1,4 +1,4 @@
-name: Update README with Latest Package Versions
+name: Debug Package Version Fetching
 
 on:
   workflow_dispatch: # Allows manual triggering
@@ -15,63 +15,75 @@ jobs:
 
       - name: Fetch Latest Package Versions
         id: fetch-versions
+        continue-on-error: true
         run: |
-          # Define package names
           PACKAGE_ETSILIB="digitraffic.link.etsi:etsilibrary"
           PACKAGE_CONNECT="digitraffic.connect:connect"
 
-          # Fetch the latest versions for ETSILIB
+          # Fetch versions for ETSILIB
           ETSILIB_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/${PACKAGE_ETSILIB}/versions" | \
             jq -r '.[0].metadata.container.tags[0] // "unknown"' || echo "unknown")
 
-          # Fetch the latest versions for CONNECT
+          # Fetch versions for CONNECT
           CONNECT_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/${PACKAGE_CONNECT}/versions" | \
             jq -r '.[0].metadata.container.tags[0] // "unknown"' || echo "unknown")
 
-          # Log the fetched versions
           echo "Fetched ETSILIB_VERSION: $ETSILIB_VERSION"
           echo "Fetched CONNECT_VERSION: $CONNECT_VERSION"
 
-          # Check for errors in fetching versions
           if [ -z "$ETSILIB_VERSION" ] || [ "$ETSILIB_VERSION" == "unknown" ]; then
-            echo "Error: Failed to fetch ETSILIB version. Response might be empty or invalid."
+            echo "Error: Failed to fetch ETSILIB version."
             exit 1
           fi
           if [ -z "$CONNECT_VERSION" ] || [ "$CONNECT_VERSION" == "unknown" ]; then
-            echo "Error: Failed to fetch CONNECT version. Response might be empty or invalid."
+            echo "Error: Failed to fetch CONNECT version."
             exit 1
           fi
 
-          # Export variables for subsequent steps
           echo "ETSILIB_VERSION=$ETSILIB_VERSION" >> $GITHUB_ENV
           echo "CONNECT_VERSION=$CONNECT_VERSION" >> $GITHUB_ENV
 
-      - name: Debugging API Response (Optional)
+      - name: Debug API Response for ETSILIB
+        if: ${{ failure() || success() }} # Ensure this step runs regardless of the previous step's outcome
         run: |
-          echo "Fetched ETSILIB_VERSION: ${{ env.ETSILIB_VERSION }}"
-          echo "Fetched CONNECT_VERSION: ${{ env.CONNECT_VERSION }}"
+          PACKAGE_ETSILIB="digitraffic.link.etsi:etsilibrary"
+          echo "Debugging API response for ETSILIB..."
+          curl -s \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/${PACKAGE_ETSILIB}/versions" > etsilib_response.json
+          cat etsilib_response.json
+
+      - name: Debug API Response for CONNECT
+        if: ${{ failure() || success() }} # Ensure this step runs regardless of the previous step's outcome
+        run: |
+          PACKAGE_CONNECT="digitraffic.connect:connect"
+          echo "Debugging API response for CONNECT..."
+          curl -s \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/${PACKAGE_CONNECT}/versions" > connect_response.json
+          cat connect_response.json
 
       - name: Update README with Latest Versions
+        if: ${{ success() }} # Only run if the fetch step succeeded
         run: |
-          # Replace placeholders in README
           sed -i "s/{{LATEST_VERSION_ETSILIB}}/${{ env.ETSILIB_VERSION }}/g" profile/README.md
           sed -i "s/{{LATEST_VERSION_CONNECT}}/${{ env.CONNECT_VERSION }}/g" profile/README.md
 
-          # Git configuration for committing
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Stage and commit changes
           git add profile/README.md
           git commit -m "Update README with latest versions: ETSILIB=${{ env.ETSILIB_VERSION }}, CONNECT=${{ env.CONNECT_VERSION }}" || echo "No changes to commit."
 
       - name: Push Changes
+        if: ${{ success() }}
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
