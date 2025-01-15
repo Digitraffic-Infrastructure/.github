@@ -8,17 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the public repository
+      - name: Checkout Public Repository
         uses: actions/checkout@v3
         with:
           repository: 'Digitraffic-Infrastructure/.github'
 
-      - name: Set up authentication for private repository
-        run: |
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com".insteadOf "https://github.com"
-
-      - name: Fetch latest package versions
-        id: fetch-version
+      - name: Fetch Latest Package Versions
+        id: fetch-versions
         run: |
           # Define package names
           PACKAGE_ETSILIB="digitraffic.link.etsi:etsilibrary"
@@ -28,15 +24,15 @@ jobs:
           ETSILIB_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/digitraffic.link.etsi%3Aetsilibrary/versions" | \
-            jq -r '.[0].metadata.container.tags[0]' 2>/dev/null || echo "unknown")
+            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/${PACKAGE_ETSILIB}/versions" | \
+            jq -r '.[0].metadata.container.tags[0] // "unknown"' || echo "unknown")
 
           # Fetch the latest versions for CONNECT
           CONNECT_VERSION=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/digitraffic.connect%3Aconnect/versions" | \
-            jq -r '.[0].metadata.container.tags[0]' 2>/dev/null || echo "unknown")
+            "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/container/${PACKAGE_CONNECT}/versions" | \
+            jq -r '.[0].metadata.container.tags[0] // "unknown"' || echo "unknown")
 
           # Log the fetched versions
           echo "Fetched ETSILIB_VERSION: $ETSILIB_VERSION"
@@ -44,11 +40,11 @@ jobs:
 
           # Check for errors in fetching versions
           if [ -z "$ETSILIB_VERSION" ] || [ "$ETSILIB_VERSION" == "unknown" ]; then
-            echo "Error: Failed to fetch ETSILIB version."
+            echo "Error: Failed to fetch ETSILIB version. Response might be empty or invalid."
             exit 1
           fi
           if [ -z "$CONNECT_VERSION" ] || [ "$CONNECT_VERSION" == "unknown" ]; then
-            echo "Error: Failed to fetch CONNECT version."
+            echo "Error: Failed to fetch CONNECT version. Response might be empty or invalid."
             exit 1
           fi
 
@@ -56,16 +52,16 @@ jobs:
           echo "ETSILIB_VERSION=$ETSILIB_VERSION" >> $GITHUB_ENV
           echo "CONNECT_VERSION=$CONNECT_VERSION" >> $GITHUB_ENV
 
-      - name: Debugging API Response
+      - name: Debugging API Response (Optional)
         run: |
-          echo "Contents of profile/README.md before update:"
-          cat profile/README.md
+          echo "Fetched ETSILIB_VERSION: ${{ env.ETSILIB_VERSION }}"
+          echo "Fetched CONNECT_VERSION: ${{ env.CONNECT_VERSION }}"
 
-      - name: Update README with latest versions
+      - name: Update README with Latest Versions
         run: |
           # Replace placeholders in README
-          sed -i "s/{{LATEST_VERSION_ETSILIB}}/$ETSILIB_VERSION/g" profile/README.md
-          sed -i "s/{{LATEST_VERSION_CONNECT}}/$CONNECT_VERSION/g" profile/README.md
+          sed -i "s/{{LATEST_VERSION_ETSILIB}}/${{ env.ETSILIB_VERSION }}/g" profile/README.md
+          sed -i "s/{{LATEST_VERSION_CONNECT}}/${{ env.CONNECT_VERSION }}/g" profile/README.md
 
           # Git configuration for committing
           git config user.name "github-actions[bot]"
@@ -73,9 +69,9 @@ jobs:
 
           # Stage and commit changes
           git add profile/README.md
-          git commit -m "Update README with latest versions: ETSILIB=$ETSILIB_VERSION, CONNECT=$CONNECT_VERSION" || echo "No changes to commit."
+          git commit -m "Update README with latest versions: ETSILIB=${{ env.ETSILIB_VERSION }}, CONNECT=${{ env.CONNECT_VERSION }}" || echo "No changes to commit."
 
-      - name: Push changes
+      - name: Push Changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
