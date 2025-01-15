@@ -1,10 +1,10 @@
-name: Debug and Update README
+name: Debug and Fetch Package Versions
 
 on:
   workflow_dispatch:
 
 jobs:
-  debug-and-update:
+  debug-package:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
         echo "Saved to repo_packages.json"
         cat repo_packages.json
 
-    - name: Fetch Package Versions
+    - name: Fetch Versions for ETSILIB
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PACKAGE_ETSILIB: digitraffic.link.etsi:etsilibrary
@@ -42,9 +42,9 @@ jobs:
           -H "Authorization: Bearer $GITHUB_TOKEN" \
           -H "Accept: application/vnd.github+json" \
           "https://api.github.com/orgs/Digitraffic-Infrastructure/packages/maven/${PACKAGE_ETSILIB}/versions" > etsilib_versions.json
-        echo "Response saved to etsilib_versions.json"
+        echo "Saved to etsilib_versions.json"
         cat etsilib_versions.json
-
+        
         echo "Extracting version..."
         VERSION=$(jq -r '.[0].metadata.container.tags[0] // "unknown"' etsilib_versions.json)
         echo "Fetched version: $VERSION"
@@ -52,3 +52,12 @@ jobs:
           echo "Error: Could not fetch the version. Check the response."
           exit 1
         fi
+
+    - name: Validate Token Permissions
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "Testing token permissions..."
+        RESPONSE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
+          "https://api.github.com/rate_limit")
+        echo "Rate limit response: $RESPONSE"
