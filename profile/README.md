@@ -48,14 +48,14 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.link.etsi</groupId>
     <artifactId>etsilibrary</artifactId>
-    <version>1.0</version>
+    <version>2.11</version>
 </dependency>
 ```
 ```xml
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
-    <version>1.0</version>
+    <version>2.11</version>
 </dependency>
 ```
 
