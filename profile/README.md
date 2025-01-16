@@ -12,7 +12,7 @@
 | **Package Name**                           | **Description**                                                                 | **Current version** |
 |--------------------------------------------|---------------------------------------------------------------------------------|:---------------------:|
 | **[digitraffic.link.etsi:etsilibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `2.12` <!-- ETSILIB_VERSION --> |
-| **[digitraffic.connect:connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `2.10` <!-- CONNECT_VERSION --> |
+| **[digitraffic.connect:connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `2.11` <!-- CONNECT_VERSION --> |
 
 ---
 
@@ -55,7 +55,7 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
-    <version>2.10</version>
+    <version>2.11</version>
 </dependency>
 ```
 ## 🔑 License
