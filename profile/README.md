@@ -58,6 +58,7 @@ Add the required packages to your dependencies section of your `pom.xml`.
     <version>2.10</version>
 </dependency>
 ```
+## 🔑 License
 
 ## 💡 Support
 If you encounter any issues or have questions regarding these packages, please contact your Digitraffic representative.
