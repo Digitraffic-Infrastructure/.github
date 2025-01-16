@@ -54,7 +54,7 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
-    <version>2.11</version>
+    <version>2.10</version>
 </dependency>
 ```
 
