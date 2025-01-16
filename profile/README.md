@@ -47,8 +47,7 @@ Add the required packages to your dependencies section of your `pom.xml`.
 ```xml
 <dependency>
     <groupId>digitraffic.link.etsi</groupId>
-    <artifactId>etsilibrary</artifactId>
-    <version>2.11</version>
+    <artifactId>etsilibrary</artifactId><version>test</version>
 </dependency>
 ```
 ```xml
