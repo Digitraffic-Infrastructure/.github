@@ -107,3 +107,41 @@ System.out.println(decodedSecureMessage.toString());
 
 /**************************************************/
 ```
+
+### Creating certificate store
+Example of creating a certificate store programatically to be used in runtime, and to reuse in succesive executions:
+#### prerequisites
+- OER encoded certificate representations
+- Binary representation of private key
+  
+```java
+// Decode certificates
+Certificate leafCertificate = new Certificate([LEAF_CERTIFICATE_BYTES]);
+Certificate intermediateCertificate = new Certificate([INTERMEDIATE_CERTIFICATE_BYTES]);
+// ...
+Certificate rootCertificate = new Certificate([ROOT_VERTIFICATE_BYTES]);
+
+// Create new security module instance
+SoftwareSecurityModule ssm = new SoftwareSecurityModule();
+
+//Add private key and add the returned key id to the associated certificate
+String keyId = tssm.addPrivateKey([PRIVATE_KEY_BYTES]);
+leafCertificate.setPrivateKeyId(keyId);
+
+//Add certificates - Begin with root and the rest of the chain down to the leaf certificate
+ssm.addCertificate(rootCertificate, rootCertificate.getId());
+ssm.addCertificate(intermediateCertificate, intermediateCertificate.getId());
+// ...
+ssm.addCertificate(leafCertificate, leafCertificate.getId());
+
+// Store to file
+ssm.save(new File([STORE_PATH]), "[STORE_PASSWORD]");
+
+//.
+//.
+//.
+
+// Create new instance of security module using the store
+SoftwareSecurityModule ssm = new SoftwareSecurityModule("[STORE_PASSWORD]", "[STORE_PATH]", logger/null);
+```
+
