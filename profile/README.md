@@ -23,6 +23,11 @@ To integrate the Maven packages into your projects:
 ### 1. Configure Your Maven Settings
 Add your GitHub Personal Access Token (PAT) to your Maven `settings.xml` (Provided by your Digitraffic representative):
 ```xml
+<dependency> 
+  <groupId>digitraffic.link.etsi</groupId> 
+  <artifactId>etsilibrary</artifactId> 
+  <version>2.11</version> 
+</dependency>
 <servers>
     <server>
         <id>digitraffic-packages</id>
@@ -34,6 +39,11 @@ Add your GitHub Personal Access Token (PAT) to your Maven `settings.xml` (Provid
 ### 2. Add the Repository
 Include the Digitraffic Maven repository in your `pom.xml`:
 ```xml
+<dependency> 
+  <groupId>digitraffic.link.etsi</groupId> 
+  <artifactId>etsilibrary</artifactId> 
+  <version>2.11</version> 
+</dependency>
 <repositories>
     <repository>
         <id>digitraffic-packages</id>
@@ -45,6 +55,11 @@ Include the Digitraffic Maven repository in your `pom.xml`:
 ### 3. Add Dependencies
 Add the required packages to your dependencies section of your `pom.xml`.
 ```xml
+<dependency> 
+  <groupId>digitraffic.link.etsi</groupId> 
+  <artifactId>etsilibrary</artifactId> 
+  <version>2.11</version> 
+</dependency>
 <dependency>
     <groupId>digitraffic.link.etsi</groupId>
     <artifactId>etsilibrary</artifactId>
@@ -52,6 +67,11 @@ Add the required packages to your dependencies section of your `pom.xml`.
 </dependency>
 ```
 ```xml
+<dependency> 
+  <groupId>digitraffic.link.etsi</groupId> 
+  <artifactId>etsilibrary</artifactId> 
+  <version>2.11</version> 
+</dependency>
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
