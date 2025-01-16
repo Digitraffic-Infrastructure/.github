@@ -21,7 +21,7 @@ Add the following dependency to your `pom.xml`:
 <dependency>
     <groupId>digitraffic.link.etsi</groupId>
     <artifactId>etsilibrary</artifactId>
-    <version>2.4</version>
+    <version>2.12</version>
 </dependency>
 ```
 ### Using Gradle
