@@ -9,16 +9,16 @@
 
 ## 📦 Available Packages
 
-| **Package Name**                           | **Description**                                                                 | **Current version** |
-|--------------------------------------------|---------------------------------------------------------------------------------|:---------------------:|
-| **[digitraffic.link.etsi:etsilibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `2.15` <!-- ETSILIB_VERSION --> |
-| **[digitraffic.connect:connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `2.12` <!-- CONNECT_VERSION --> |
+| **Package Name**                           | **Description**                                                                 | **Current version Java** | **Current version .NET** |
+|--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
+| **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `2.15` <!-- ETSILIB_VERSION --> | `1.0` <!--C ETSILIB_VERSION --> |
+| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `2.12` <!-- CONNECT_VERSION --> | `1.0` <!-- CCONNECT_VERSION --> |
 
 ---
 
-## 🔧 Using the Maven Packages
+## 🔧 Getting Started (Maven)
 
-To integrate the Maven packages into your projects:
+To integrate the packages into your projects using Maven:
 
 ### 1. Configure Your Maven Settings
 Add your GitHub Personal Access Token (PAT) to your Maven `settings.xml` (Provided by your Digitraffic representative):
@@ -58,6 +58,39 @@ Add the required packages to your dependencies section of your `pom.xml`.
     <version>2.12</version>
 </dependency>
 ```
+## 🔧 Getting Started (NuGet)
+
+To integrate the packages into your projects using NuGet:
+
+### 1. Add NuGet source
+Add the dotnet source using nuget CLI and your GitHub Personal Access Token (PAT) (Provided by your Digitraffic representative):
+```sh
+dotnet nuget add source "https://nuget.pkg.github.com/Digitraffic-Infrastructure/index.json" --name github --username Digitraffic-User --password YOUR_PERSONAL_ACCESS_TOKEN
+```
+### 2. Install Packages
+Add packages using the dotnet CLI:
+```sh
+dotnet add package Digitraffic.Connect --version 1.0
+```
+```sh
+dotnet add package Digitraffic.Link.ETSI.EtsiLibrary --version 1.0
+```
+or by updating your .csproj file:
+```xml
+<ItemGroup>
+  <PackageReference Include="Digitraffic.Connect" Version="1.0.0" />
+</ItemGroup>
+```
+```xml
+<ItemGroup>
+  <PackageReference Include="Digitraffic.Link.ETSI.EtsiLibrary" Version="1.0.0" />
+</ItemGroup>
+```
+After adding packages, restore dependencies with:
+```sh
+dotnet restore
+```
+
 ## 🔑 License
 
 ## 💡 Support
