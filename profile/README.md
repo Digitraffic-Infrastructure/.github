@@ -12,7 +12,7 @@
 | **Package Name**                           | **Description**                                                                 | **Current version Java** | **Current version .NET** |
 |--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
 | **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `2.15` <!-- ETSILIB_VERSION --> | `1.0` <!-- CETSILIB_VERSION --> |
-| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `2.12` <!-- CONNECT_VERSION --> | `1.0` <!-- CCONNECT_VERSION --> |
+| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `2.12` <!-- CONNECT_VERSION --> | `1.0.6` <!-- CCONNECT_VERSION --> |
 
 ---
 
