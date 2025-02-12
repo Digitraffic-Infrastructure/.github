@@ -70,7 +70,7 @@ dotnet nuget add source "https://nuget.pkg.github.com/Digitraffic-Infrastructure
 ### 2. Install Packages
 Add packages using the dotnet CLI:
 ```sh
-dotnet add package Digitraffic.Connect --version 1.0
+dotnet add package Digitraffic.Connect --version 1.0.6
 ```
 ```sh
 dotnet add package Digitraffic.Link.ETSI.EtsiLibrary --version 1.0
