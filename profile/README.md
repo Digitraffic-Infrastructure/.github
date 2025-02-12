@@ -78,7 +78,7 @@ dotnet add package Digitraffic.Link.ETSI.EtsiLibrary --version 1.0
 or by updating your .csproj file:
 ```xml
 <ItemGroup>
-  <PackageReference Include="Digitraffic.Connect" Version="1.0.0" />
+  <PackageReference Include="Digitraffic.Connect" Version="1.0.6" />
 </ItemGroup>
 ```
 ```xml
