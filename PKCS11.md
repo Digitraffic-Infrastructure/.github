@@ -1,7 +1,7 @@
 
 <div align="center">
     <h1>PKCS11 Security Module</h1>
-    <p>A cryptographic interface for interacting with HSMs for message encryption, decryption, signing and signature verification.</p>
+    <p>A cryptographic implementation of Link V2X SecurityModule for interacting with PKCS11 complient HSMs for secure message encryption, decryption, signing and signature verification.</p>
 </br>
 </br>
 </div>
