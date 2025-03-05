@@ -63,7 +63,7 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.pkcs11securitymodule</groupId>
     <artifactId>pkcs11securitymodule</artifactId>
-    <version>2.12</version>
+    <version>1.0</version>
 </dependency>
 ```
 ## 🔧 Getting Started (NuGet)
