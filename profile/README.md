@@ -13,7 +13,7 @@
 |--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
 | **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `2.23` <!-- ETSILIB_VERSION --> | `1.0.1` <!-- CETSILIB_VERSION --> |
 | **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `2.12` <!-- CONNECT_VERSION --> | `1.0.7` <!-- CCONNECT_VERSION --> |
-| **[PKCS11SecurityModule](../Connect.md)**            | Cryptographic interface for interacting with HSMs for message encryption, decryption, signing and signature verification.            |      `1.1` <!-- PKCS11_VERSION --> | `Unavailable` |
+| **[PKCS11SecurityModule](../PKCS11.md)**            | Cryptographic interface for interacting with HSMs for message encryption, decryption, signing and signature verification.            |      `1.1` <!-- PKCS11_VERSION --> | `Unavailable` |
 
 ---
 
