@@ -15,6 +15,8 @@
 
 ## Release notes
  > ### Release 2.38
+ > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br>
+ > ### Release 2.38
  > **Created:** 2025-03-13</br> > **Bug fixes:** BUG_FIXES</br> > **Features:** FEATURES</br> > **Breaking changes** BREAKING_CHANGES</br>
  ### Release 2.38
  **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br>
