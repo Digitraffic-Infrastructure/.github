@@ -17,47 +17,6 @@
  > ### Release 2.38
  > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
 
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
- > ### Release 2.38
- > **Created:** 2025-03-13
- **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br>---</br>
- > ### Release 2.38
- > **Created:** 2025-03-13 
- **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br>---</br>
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br>---</br>
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br> ---
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br>
- > ### Release 2.38
- > **Created:** 2025-03-13</br> > **Bug fixes:** BUG_FIXES</br> > **Features:** FEATURES</br> > **Breaking changes** BREAKING_CHANGES</br>
- ### Release 2.38
- **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES</br>
- ### Release 2.38
- **Created:** 2025-03-13T12:22:40Z</br> **Bug fixes:** BUG_FIXES  **Features:** FEATURES  **Breaking changes** BREAKING_CHANGES
- ### Release 2.38
- **Created:** 2025-03-13T12:22:40Z
- **Bug fixes:** BUG_FIXES  **Features:** FEATURES  **Breaking changes** BREAKING_CHANGES  ### Release 2.38 '-' 2025-03-13T12:22:40Z  **Bug fixes:** BUG_FIXES  **Features:** FEATURES  **Breaking changes** BREAKING_CHANGES
- ### Release 2.38 - 2025-03-13T12:22:40Z
- **Bug fixes:** BUG_FIXES
- **Features:** FEATURES
- **Breaking changes** BREAKING_CHANGES
- ### Release 2.38 - 2025-03-13T12:22:40Z
- **Bug fixes:** BUG_FIXES
- **Features:** FEATURES
- **Breaking changes** BREAKING_CHANGES
- ### Release 2.38 - 2025-03-13T12:22:40Z
- **Bug fixes:** BUG_FIXES
- **Features:** FEATURES
- **Breaking changes** BREAKING_CHANGES
- Release 2.38
-<!-- LATEST_VERSION -->
-
 ## Installation
 
 ### Using Maven
