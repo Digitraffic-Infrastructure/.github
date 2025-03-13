@@ -13,7 +13,7 @@
 - **Security**: L0-compliant security implementation and software security module for secure message handling.
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
-## Release notes
+## Release note
 <!-- LATEST_VERSION -->
 
 ## Installation
