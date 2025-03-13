@@ -21,13 +21,13 @@ Add the following dependency to your `pom.xml`:
 <dependency>
     <groupId>digitraffic.link.etsi</groupId>
     <artifactId>etsilibrary</artifactId>
-    <version>2.36</version>
+    <version>2.38</version>
 </dependency>
 ```
 ### Using Gradle
 Add the following to your `build.gradle`:
 ```xml
-implementation 'digitraffic.link.etsi:etsilibrary:2.36'
+implementation 'digitraffic.link.etsi:etsilibrary:2.38'
 ```
 
 ## Getting Started
