@@ -14,6 +14,9 @@
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
 ## Release notes
+| **Version**                           | **Bug fixes**                                                                 | **Features** | **Breaking changes** |
+|--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
+<!-- LATEST_RELEASE -->
 
 ## Installation
 
