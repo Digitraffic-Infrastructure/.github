@@ -22,6 +22,10 @@
  **Bug fixes:** BUG_FIXES
  **Features:** FEATURES
  **Breaking changes** BREAKING_CHANGES
+ ### Release 2.38 - 2025-03-13T12:22:40Z
+ **Bug fixes:** BUG_FIXES
+ **Features:** FEATURES
+ **Breaking changes** BREAKING_CHANGES
  Release 2.38
 <!-- LATEST_VERSION -->
 
