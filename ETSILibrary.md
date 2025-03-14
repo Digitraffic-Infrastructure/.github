@@ -16,6 +16,13 @@
 ## Release notes
  > ### Release 2.38
  > **Created:** 2025-03-13</br> **Bug fixes:**
+ > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) >
+ > **Features:**
+ ></br> **Breaking changes**
+ >
+
+ > ### Release 2.38
+ > **Created:** 2025-03-13</br> **Bug fixes:**
  > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) ></br> **Features:**
  ></br> **Breaking changes**
  >
