@@ -22,6 +22,14 @@
  > **Breaking changes:**
  None 
 
+ > ### Release 2.40 | Created: 2025-03-14 
+ > **Bug fixes:**
+ None > 
+ > **Features:**
+ > * Updated release management > 
+ > **Breaking changes:**
+ None 
+
  > ### Release 2.39 | Created: 2025-03-14 
  > **Bug fixes:**
  > * Handling of signer type Digest corrected
