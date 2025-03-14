@@ -14,6 +14,14 @@
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
 ## Release notes
+ > ### Release 2.46 | Created: 2025-03-14 
+ > **Bug fixes:**
+ None > 
+ > **Features:**
+ > * Updated release management > 
+ > **Breaking changes:**
+ None 
+
  > ### Release 2.40 | Created: 2025-03-14 
  > **Bug fixes:**
  None
