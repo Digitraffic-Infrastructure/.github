@@ -16,359 +16,14 @@
 ## Release notes
  > ### Release 2.39 | Created: 2025-03-14 
  > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None > 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity 
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None > 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- Nonern 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:** > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 | Created: 2025-03-14</br></br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 Created: 2025-03-14</br></br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39 Created: 2025-03-14</br></br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br></br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None</br>  **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br></br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
+ > * Handling of signer type Digest corrected
+ > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
+ > 
  > **Features:**
  None
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br></br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity >
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14 
- **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) > 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) 
- **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:**
  > 
  > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) 
- > **Features:**
- None 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- None
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) 
- > **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) 
- **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- >
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- > None
- > **Breaking changes:**
- None
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- > None
- > **Breaking changes:**
- None
-
- > ### Release 2.39
- > **Created:** 2025-03-14</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > **Features:**
- > None
- > **Breaking changes:**
- None
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) >
- > **Features:**
- >
- > **Breaking changes:**
- None
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) >
- > **Features:**
- >
- > **Breaking changes:**
- >
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) >
- > **Features:**
- >
- **Breaking changes**
- >
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) >
- > **Features:**
- ></br> **Breaking changes**
- >
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) ></br> **Features:**
- ></br> **Breaking changes**
- >
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- > 	 > * Handling of signer type Digest corrected > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM) ></br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- > 	 * Handling of signer type Digest corrected * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**
- * Handling of signer type Digest corrected * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:**</br> * Handling of signer type Digest corrected * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:** * Handling of signer type Digest corrected * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
-
- > ### Release 2.38
- > **Created:** 2025-03-13</br> **Bug fixes:** BUG_FIXES</br> **Features:** FEATURES</br> **Breaking changes** BREAKING_CHANGES
+ > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity 
 
 ## Installation
 
