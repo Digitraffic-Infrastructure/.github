@@ -16,35 +16,47 @@
 ## Release notes
  > ### Release 2.46 | Created: 2025-03-14 
  > **Bug fixes:**
- None > 
+ None
+ > 
  > **Features:**
- > * Updated release management > 
+ > * Updated release management
+ > 
  > **Breaking changes:**
- None 
+ None
+ 
 
  > ### Release 2.46 | Created: 2025-03-14 
  > **Bug fixes:**
- None > 
+ None
+ > 
  > **Features:**
- > * Updated release management > 
+ > * Updated release management
+ > 
  > **Breaking changes:**
- None 
+ None
+ 
 
  > ### Release 2.46 | Created: 2025-03-14 
  > **Bug fixes:**
- None > 
+ None
+ > 
  > **Features:**
- > * Updated release management > 
+ > * Updated release management
+ > 
  > **Breaking changes:**
- None 
+ None
+ 
 
  > ### Release 2.46 | Created: 2025-03-14 
  > **Bug fixes:**
- None > 
+ None
+ > 
  > **Features:**
- > * Updated release management > 
+ > * Updated release management
+ > 
  > **Breaking changes:**
- None 
+ None
+ 
 
  > ### Release 2.40 | Created: 2025-03-14 
  > **Bug fixes:**
@@ -66,8 +78,8 @@
  None
  > 
  > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity 
- 
+ > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity
+<!-- RELEASES_END -->
  **[Go to older release notes](../ETSILibraryReleases.md)** 
  
   ## Installation
