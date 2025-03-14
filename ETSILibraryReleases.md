@@ -1,4 +1,12 @@
 ## Release notes
+ > ### Release 2.42 | Created: 2025-03-14 
+ > **Bug fixes:**
+ None > 
+ > **Features:**
+ > * Updated release management > 
+ > **Breaking changes:**
+ None 
+
  > ### Release 2.41 | Created: 2025-03-14 
  > **Bug fixes:**
  None > 

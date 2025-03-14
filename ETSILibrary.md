@@ -14,6 +14,14 @@
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
 ## Release notes
+ > ### Release 2.42 | Created: 2025-03-14 
+ > **Bug fixes:**
+ None > 
+ > **Features:**
+ > * Updated release management > 
+ > **Breaking changes:**
+ None 
+
  > ### Release 2.41 | Created: 2025-03-14 
  > **Bug fixes:**
  None > 
@@ -38,17 +46,6 @@
  > **Breaking changes:**
  None 
 
- > ### Release 2.39 | Created: 2025-03-14 
- > **Bug fixes:**
- > * Handling of signer type Digest corrected
- > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
- > 
- > **Features:**
- None
- > 
- > **Breaking changes:**
- > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity 
-
   ## Installation
    
    ### Using Maven
@@ -57,13 +54,13 @@
    <dependency>
        <groupId>digitraffic.link.etsi</groupId>
        <artifactId>etsilibrary</artifactId>
-    <version>2.41</version>
+    <version>2.42</version>
    </dependency>
    ```
    ### Using Gradle
    Add the following to your `build.gradle`:
    ```xml
-   implementation 'digitraffic.link.etsi:etsilibrary:2.41'
+   implementation 'digitraffic.link.etsi:etsilibrary:2.42'
    ```
    
    ## Getting Started
