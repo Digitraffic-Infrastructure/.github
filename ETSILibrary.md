@@ -14,37 +14,28 @@
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
 ## Release notes
- > ### Release 2.46 | Created: 2025-03-14 
+ > ### Release 2.40 | Created: 2025-03-14 
  > **Bug fixes:**
- None > 
+ None
+ > 
  > **Features:**
- > * Updated release management > 
+ > * Updated release management
+ > 
  > **Breaking changes:**
- None 
+ None
+ 
 
- > ### Release 2.45 | Created: 2025-03-14 
+ > ### Release 2.39 | Created: 2025-03-14 
  > **Bug fixes:**
- None > 
+ > * Handling of signer type Digest corrected
+ > * Corrected target payload type to be SPATEM on incoming message type SPATEM (Previously SSEM)
+ > 
  > **Features:**
- > * Updated release management > 
+ None
+ > 
  > **Breaking changes:**
- None 
-
- > ### Release 2.44 | Created: 2025-03-14 
- > **Bug fixes:**
- None > 
- > **Features:**
- > * Updated release management > 
- > **Breaking changes:**
- None 
-
- > ### Release 2.44 | Created: 2025-03-14 
- > **Bug fixes:**
- None > 
- > **Features:**
- > * Updated release management > 
- > **Breaking changes:**
- None 
+ > * Changes namespace of IETSISecurity, ETSISecurity_L0 from digitraffic.security to digitraffic.security.ETSISecurity 
+ 
 
   ## Installation
    
