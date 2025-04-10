@@ -38,13 +38,13 @@
  > **Breaking changes:**
  > * ISecurityModule interface updated to include method void generateKeyPair(CurveType curveType, String alias) 
 
- > ### Release 2.46 | Created: 2025-03-14 
+ > ### Release 2.47 | Created: 2025-03-17 
  > **Bug fixes:**
  None > 
  > **Features:**
- > * Updated release management > 
+ > * Methods for generating key pairs in security modules added > 
  > **Breaking changes:**
- None 
+ > * ISecurityModule interface updated to include method void generateKeyPair(CurveType curveType, String alias) 
 
 <!-- RELEASES_END -->
  **[Go to older release notes](../ETSILibraryReleases.md)** 
