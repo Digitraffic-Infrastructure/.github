@@ -1,4 +1,12 @@
 ## Release notes
+ > ### Release 2.71 | Created: 2025-10-13 
+ > **Bug fixes:**
+ None > 
+ > **Features:**
+ > * Methods for generating key pairs in security modules added > 
+ > **Breaking changes:**
+ > * ISecurityModule interface updated to include method void generateKeyPair(CurveType curveType, String alias) 
+
  > ### Release 2.70 | Created: 2025-10-13 
  > **Bug fixes:**
  None > 
