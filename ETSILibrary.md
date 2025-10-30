@@ -30,7 +30,7 @@
  > **Breaking changes:**
  > * ISecurityModule interface updated to include method void generateKeyPair(CurveType curveType, String alias) 
 
- > ### Release 2.79 | Created: 2025-10-30 
+ > ### Release 2.80 | Created: 2025-10-30 
  > **Bug fixes:**
  None > 
  > **Features:**
