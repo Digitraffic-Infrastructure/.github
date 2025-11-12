@@ -24,9 +24,35 @@ To integrate the packages into your projects using Maven:
 ### 1. Configure Your Maven Settings
 Add your GitHub Personal Access Token (PAT) to your Maven `settings.xml` (Provided by your Digitraffic representative):
 ```xml
+<activeProfiles>
+    <activeProfile>github</activeProfile>
+</activeProfiles>
+
+<profiles>
+    <profile>
+        <id>github</id>
+        <repositories>
+            <repository>
+                <id>central</id>
+                <url>https://repo1.maven.org/maven2</url>
+            </repository>
+            <repository>
+                <id>github</id>
+                <url>https://maven.pkg.github.com/Digitraffic-Infrastructure/Digitraffic.CentralRepository</url>
+                <releases>
+                    <updatePolicy>always</updatePolicy>
+                </releases>
+                <snapshots>
+                    <updatePolicy>always</updatePolicy>
+                </snapshots>
+            </repository>
+        </repositories>
+    </profile>
+</profiles>
+
 <servers>
     <server>
-        <id>digitraffic-packages</id>
+        <id>github</id>
         <username>Digitraffic-User</username>
         <password>YOUR_PERSONAL_ACCESS_TOKEN</password>
     </server>
