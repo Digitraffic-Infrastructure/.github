@@ -12,7 +12,7 @@
 | **Package Name**                           | **Description**                                                                 | **Current version Java** | **Current version .NET** |
 |--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
 | **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `2.83` <!-- ETSILIB_VERSION --> | `1.0.32` <!-- CETSILIB_VERSION --> |
-| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `3.0.3` <!-- CONNECT_VERSION --> | `1.0.11` <!-- CCONNECT_VERSION --> |
+| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `3.0.4` <!-- CONNECT_VERSION --> | `1.0.11` <!-- CCONNECT_VERSION --> |
 | **[PKCS11SecurityModule](../PKCS11.md)**            | Cryptographic interface for interacting with HSMs for message encryption, decryption, signing and signature verification.            |      `1.10` <!-- PKCS11_VERSION --> | `Unavailable` |
 
 ---
@@ -82,7 +82,7 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
-    <version>3.0.3</version>
+    <version>3.0.4</version>
 </dependency>
 ```
 ```xml
