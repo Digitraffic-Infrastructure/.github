@@ -12,7 +12,7 @@
 | **Package Name**                           | **Description**                                                                 | **Current version Java** | **Current version .NET** |
 |--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
 | **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `3.0.4` <!-- ETSILIB_VERSION --> | `1.0.34` <!-- CETSILIB_VERSION --> |
-| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `3.1.4` <!-- CONNECT_VERSION --> | `1.0.11` <!-- CCONNECT_VERSION --> |
+| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `3.1.4` <!-- CONNECT_VERSION --> | `1.0.12` <!-- CCONNECT_VERSION --> |
 | **[PKCS11SecurityModule](../PKCS11.md)**            | Cryptographic interface for interacting with HSMs for message encryption, decryption, signing and signature verification.            |      `2.0.0` <!-- PKCS11_VERSION --> | `Unavailable` |
 
 ---
@@ -104,7 +104,7 @@ dotnet nuget add source "https://nuget.pkg.github.com/Digitraffic-Infrastructure
 ### 2. Install Packages
 Add packages using the dotnet CLI:
 ```sh
-dotnet add package Digitraffic.Connect --version 1.0.11
+dotnet add package Digitraffic.Connect --version 1.0.12
 ```
 ```sh
 dotnet add package Digitraffic.Link.ETSI.EtsiLibrary --version 1.0.34
@@ -112,7 +112,7 @@ dotnet add package Digitraffic.Link.ETSI.EtsiLibrary --version 1.0.34
 or by updating your .csproj file:
 ```xml
 <ItemGroup>
-  <PackageReference Include="Digitraffic.Connect" Version="1.0.11" />
+  <PackageReference Include="Digitraffic.Connect" Version="1.0.12" />
 </ItemGroup>
 ```
 ```xml
