@@ -18,13 +18,13 @@ Add the following dependency to your `pom.xml`:
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
-    <version>3.1.3</version>
+    <version>3.1.4</version>
 </dependency>
 ```
 ### Using Gradle
 Add the following to your `build.gradle`:
 ```xml
-implementation 'digitraffic.connect:connect:3.1.3'
+implementation 'digitraffic.connect:connect:3.1.4'
 ```
 
 ## Getting Started
