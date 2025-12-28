@@ -14,7 +14,7 @@
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
 ## Release notes
- > ### Release 3.0.4 | Created: 2025-12-19 
+ > ### Release 3.0.6 | Created: 2025-12-28 
  > **Bug fixes:**
  None > 
  > **Features:**
@@ -57,13 +57,13 @@
    <dependency>
        <groupId>digitraffic.link.etsi</groupId>
        <artifactId>etsilibrary</artifactId>
-    <version>3.0.4</version>
+    <version>3.0.6</version>
    </dependency>
    ```
    ### Using Gradle
    Add the following to your `build.gradle`:
    ```xml
-   implementation 'digitraffic.link.etsi:etsilibrary:3.0.4'
+   implementation 'digitraffic.link.etsi:etsilibrary:3.0.6'
    ```
    
    ## Getting Started
