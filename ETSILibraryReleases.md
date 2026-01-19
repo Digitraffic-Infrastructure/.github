@@ -15,6 +15,14 @@
  > **Breaking changes:**
  > * ISecurityModule interface updated to include method void generateKeyPair(CurveType curveType, String alias) 
 
+ > ### Release 4.0.0 | Created: 2026-01-19 
+ > **Bug fixes:**
+ None > 
+ > **Features:**
+ > * Methods for generating key pairs in security modules added > 
+ > **Breaking changes:**
+ > * ISecurityModule interface updated to include method void generateKeyPair(CurveType curveType, String alias) 
+
  > ### Release 3.0.7 | Created: 2025-12-28 
  > **Bug fixes:**
  None > 
