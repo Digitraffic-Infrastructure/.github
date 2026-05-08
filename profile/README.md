@@ -11,7 +11,7 @@
 
 | **Package Name**                           | **Description**                                                                 | **Current version Java** | **Current version .NET** |
 |--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
-| **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `4.0.14` <!-- ETSILIB_VERSION --> | `1.0.36` <!-- CETSILIB_VERSION --> |
+| **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `4.0.15` <!-- ETSILIB_VERSION --> | `1.0.36` <!-- CETSILIB_VERSION --> |
 | **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `6.0.10` <!-- CONNECT_VERSION --> | `1.0.24` <!-- CCONNECT_VERSION --> |
 | **[PKCS11SecurityModule](../PKCS11.md)**            | Cryptographic interface for interacting with HSMs for message encryption, decryption, signing and signature verification.            |      `4.1.12` <!-- PKCS11_VERSION --> | `Unavailable` |
 
@@ -75,7 +75,7 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.link.etsi</groupId>
     <artifactId>etsilibrary</artifactId>
-    <version>4.0.14</version>
+    <version>4.0.15</version>
 </dependency>
 ```
 ```xml
