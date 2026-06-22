@@ -14,7 +14,7 @@
 - **User feedback**: Built in methods for user feedback for guidance towards creating compliant messages through intuitive message string representations and robust exception handling.
 
 ## Release notes
- > ### Release 4.0.18 | Created: 2026-06-22 
+ > ### Release 4.0.19 | Created: 2026-06-22 
  > **Bug fixes:**
  None > 
  > **Features:**
@@ -38,7 +38,7 @@
  > **Breaking changes:**
  > * ISecurityModule interface updated to include method void generateKeyPair(CurveType curveType, String alias) 
 
- > ### Release 4.0.17 | Created: 2026-06-01 
+ > ### Release 4.0.18 | Created: 2026-06-22 
  > **Bug fixes:**
  None > 
  > **Features:**
@@ -57,13 +57,13 @@
    <dependency>
        <groupId>digitraffic.link.etsi</groupId>
        <artifactId>etsilibrary</artifactId>
-    <version>4.0.18</version>
+    <version>4.0.19</version>
    </dependency>
    ```
    ### Using Gradle
    Add the following to your `build.gradle`:
    ```xml
-   implementation 'digitraffic.link.etsi:etsilibrary:4.0.18'
+   implementation 'digitraffic.link.etsi:etsilibrary:4.0.19'
    ```
    
    ## Getting Started
