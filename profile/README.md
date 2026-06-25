@@ -11,8 +11,8 @@
 
 | **Package Name**                           | **Description**                                                                 | **Current version Java** | **Current version .NET** |
 |--------------------------------------------|---------------------------------------------------------------------------------|:------------------------:|:------------------------:|
-| **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `4.0.19` <!-- ETSILIB_VERSION --> | `1.0.37` <!-- CETSILIB_VERSION --> |
-| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `6.0.38` <!-- CONNECT_VERSION --> | `1.0.26` <!-- CCONNECT_VERSION --> |
+| **[EtsiLibrary](../ETSILibrary.md)**      | A library for generating, encoding, and decoding V2X messages compliant with the ETSI standard. |      `4.0.21` <!-- ETSILIB_VERSION --> | `1.0.37` <!-- CETSILIB_VERSION --> |
+| **[Connect](../Connect.md)**            | Tools and utilities for establishing connections using BI and SI interfaces.           |      `6.0.39` <!-- CONNECT_VERSION --> | `1.0.26` <!-- CCONNECT_VERSION --> |
 | **[PKCS11SecurityModule](../PKCS11.md)**            | Cryptographic interface for interacting with HSMs for message encryption, decryption, signing and signature verification.            |      `4.1.15` <!-- PKCS11_VERSION --> | `Unavailable` |
 
 ---
@@ -75,14 +75,14 @@ Add the required packages to your dependencies section of your `pom.xml`.
 <dependency>
     <groupId>digitraffic.link.etsi</groupId>
     <artifactId>etsilibrary</artifactId>
-    <version>4.0.19</version>
+    <version>4.0.21</version>
 </dependency>
 ```
 ```xml
 <dependency>
     <groupId>digitraffic.connect</groupId>
     <artifactId>connect</artifactId>
-    <version>6.0.38</version>
+    <version>6.0.39</version>
 </dependency>
 ```
 ```xml
